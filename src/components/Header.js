@@ -6,16 +6,20 @@ import { AiOutlineUser } from 'react-icons/ai'
 import { BsListNested } from 'react-icons/bs'
 
 const Header = () => {
-  const [isSticky, setIsSticky] = useState('false')
+  const [isSticky, setIsSticky] = useState(false)
   const ref = useRef(null)
-  const handleScroll = () => {
-    if (ref.current) {
-      setIsSticky(ref.current.getBoundingClientRect().top > 10)
-    }
-    console.log(isSticky)
-  }
 
   useEffect(() => {
+    const handleScroll = () => {
+      // if (window.scrollY >= 30) {
+      //   setIsSticky(true)
+      //   console.log(window.scrollY)
+      // } else {
+      //   setIsSticky(false)
+      // }
+      setIsSticky(window.scrollY >= 30)
+      console.log(isSticky)
+    }
     window.addEventListener('scroll', handleScroll)
 
     return () => {
@@ -25,7 +29,7 @@ const Header = () => {
 
   return (
     <div
-      className={`navbar_wrapper ${isSticky ? '' : 'sticky_header'} `}
+      className={`navbar_wrapper ${isSticky ? 'sticky_header' : ''} `}
       ref={ref}
     >
       {/* <div className="navbar_wrapper"> */}
