@@ -4,7 +4,20 @@
   font-family: 'Raleway';
 }
 
-div, h1, h2, h2, h4, h5, h6, p, li, span, input, textarea, a, span {
+div,
+h1,
+h2,
+h2,
+h4,
+h5,
+h6,
+p,
+li,
+span,
+input,
+textarea,
+a,
+span {
   text-shadow: rgb(0 0 0 / 0%) 1px 1px 1px;
 }
 
@@ -19,8 +32,8 @@ p {
   font-family: 'Roboto', sans-serif;
 
   @media only screen and (max-width: 1440px) {
-      font-size: 15px;
-    }
+    font-size: 15px;
+  }
 }
 
 h1 {
@@ -38,5 +51,4 @@ h1 {
     font-size: 30px;
     line-height: 42px;
   }
-
 }
