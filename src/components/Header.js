@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import navbar_logo from '../img/navbar_logo.svg'
 import '../styles/header.scss'
 import { AiOutlineSearch } from 'react-icons/ai'
@@ -6,21 +6,29 @@ import { AiOutlineUser } from 'react-icons/ai'
 import { BsListNested } from 'react-icons/bs'
 
 const Header = () => {
-  // const [isSticky, setIsSticky] = useState('false')
+  const [isSticky, setIsSticky] = useState('false')
+  const ref = useRef(null)
+  const handleScroll = () => {
+    if (ref.current) {
+      setIsSticky(ref.current.getBoundingClientRect().top > 10)
+    }
+    console.log(isSticky)
+  }
 
-  // window.onscroll = function () {
-  //   scrollFunction()
-  // }
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
 
-  // function scrollFunction() {
-  //   var showAfter = 10
-  //   if (this.scrollTop() > showAfter) {
-  //     setIsSticky(true)
-  //   }
-  // }
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    // <div className={`navbar_wrapper ${isSticky ? 'sticky_header' : ''} `}>
-    <div className="navbar_wrapper">
+    <div
+      className={`navbar_wrapper ${isSticky ? '' : 'sticky_header'} `}
+      ref={ref}
+    >
+      {/* <div className="navbar_wrapper"> */}
       <div className="navbar_container">
         <a href="/interior" className="Link_wrapper">
           <img src={navbar_logo} className="navbar_logo" />
