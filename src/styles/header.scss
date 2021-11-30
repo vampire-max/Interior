@@ -16,6 +16,11 @@
   box-shadow: rgb(0 0 0 /10%) 0px 0px 20px;
 }
 
+.navbar_wrapper.sticky_header {
+  .navbar_button {
+    color: rgb(25, 25, 25);
+  }
+}
 .navbar_container {
   margin-left: auto;
   margin-right: auto;
@@ -50,6 +55,7 @@
   font-size: 20px;
   margin-right: 10px;
   color: rgb(198, 198, 198);
+  border: none;
 
   @media only screen and (max-width: 1440px) {
     margin-right: 7px;
