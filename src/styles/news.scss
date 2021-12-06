@@ -1,0 +1,102 @@
+.news_sectionWrapper {
+  background-color: rgb(251, 250, 254);
+  padding-bottom: 20px;
+  position: relative;
+  margin-top: 40px;
+
+  @media only screen and (max-width: 1440px) {
+    margin-top: 20px;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 10vw;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 17vw;
+
+    @media only screen and (max-width: 1440px) {
+      height: 14vw;
+    }
+
+    @media only screen and (max-width: 1360px) {
+      height: 15vw;
+    }
+
+    @media only screen and (max-width: 1200px) {
+      height: 17vw;
+    }
+  }
+
+  .news_ContentWrapper {
+    padding: 0 auto;
+    max-width: 1576px;
+    position: relative;
+    z-index: 1;
+
+    @media only screen and (max-width: 1600px) {
+      padding: 0px 60px;
+    }
+
+    @media only screen and (max-width: 1440px) {
+      padding: 0px 50px;
+      margin-bottom: -30px;
+    }
+
+    @media only screen and (max-width: 1200px) {
+      padding: 0px 30px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      margin: 0px -30px;
+
+      .col {
+        width: calc(25%);
+        padding: 0px 50px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 500;
+        color: rgb(245, 245, 252);
+        font-size: 25vw;
+
+        @media only screen and (max-width: 1200px) {
+          font-size: 22vw;
+        }
+
+        &:last-child {
+          color: rgb(255, 251, 192);
+        }
+      }
+    }
+
+    .news_Wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+      top: -7vw;
+      margin: 0 -30px;
+
+      @media only screen and (max-width: 1440px) {
+        top: -8vw;
+      }
+
+      @media only screen and (max-width: 1360px) {
+        top: -12vw;
+      }
+
+      @media only screen and (min-width: 992px) and (max-width: 1200px) {
+        margin: 0px -15px;
+        top: -14vw;
+      }
+    }
+  }
+}

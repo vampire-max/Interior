@@ -1,0 +1,113 @@
+.feature_sectionwrapper {
+  padding: 81px 0px;
+  overflow: hidden;
+  position: relative;
+
+  @media only screen and (max-width: 1440px) {
+    padding: 60px 0;
+  }
+}
+
+.section_header {
+  padding-bottom: 70px;
+  text-align: center;
+
+  @media only screen and (max-width: 1440px) {
+    padding-bottom: 56px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    padding-bottom: 50px;
+  }
+
+  @media only screen and (max-width: 991px) {
+    padding-bottom: 40px;
+  }
+
+  h5 {
+    font-weight: 600;
+    font-size: 14px;
+    color: rgb(53, 27, 217);
+    line-height: 18px;
+    text-transform: uppercase;
+    margin: 0 0 15px;
+
+    @media only screen and (max-width: 1200px) {
+      font-size: 14px;
+    }
+  }
+
+  h2 {
+    color: rgb(25, 25, 25);
+    font-size: 36px;
+    line-height: 54px;
+    font-weight: 600;
+    margin: 0px;
+
+    @media only screen and (max-width: 1440px) {
+      font-size: 30px;
+      line-height: 46px;
+    }
+
+    @media only screen and (max-width: 1200px) {
+      font-size: 28px;
+      line-height: 42px;
+    }
+  }
+}
+
+.service_containerWrapper {
+  .service_feature {
+    margin: 0 -71.5px;
+    display: flex;
+
+    @media only screen and (max-width: 1360px) {
+      margin: 0 -25px;
+    }
+
+    .blog_post {
+      text-align: center;
+      padding: 0 71.5px;
+
+      @media only screen and (max-width: 1360px) {
+        padding: 0 25px;
+      }
+
+      .thumbnail {
+        margin: 0 0 40px;
+
+        @media only screen and (max-width: 1360px) {
+          margin: 0 0 27px;
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+
+          @media only screen and (max-width: 1360px) {
+            width: 90px;
+            height: auto;
+          }
+        }
+      }
+
+      .content {
+        h3 {
+          @media only screen and (max-width: 1360px) {
+            font-size: 22px;
+            line-height: 24px;
+          }
+
+          @media only screen and (max-width: 1360px) {
+            font-size: 20px;
+            margin: 0 0 12px;
+          }
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

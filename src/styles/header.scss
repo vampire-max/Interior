@@ -42,7 +42,7 @@
 .navbar_logo {
   display: block;
   width: 128px;
-  max-width: 1005;
+  max-width: 100%;
   margin: 0;
   height: auto;
 }
@@ -58,6 +58,7 @@
   color: rgb(198, 198, 198);
   border: none;
   background-color: transparent;
+  cursor: pointer;
 
   @media only screen and (max-width: 1440px) {
     margin-right: 7px;

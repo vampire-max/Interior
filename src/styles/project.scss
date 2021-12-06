@@ -1,0 +1,82 @@
+.project_sectionWrapper {
+  padding: 130px 0 0px;
+  margin-top: 140px;
+  margin-bottom: 60px;
+  background-image: url(../img/background.svg);
+  background-repeat: no-repeat;
+  position: relative;
+  background-position: left top;
+  background-size: cover;
+
+  @media only screen and (max-width: 1440px) {
+    padding: 120px 0px 0px;
+    margin-top: 81px;
+  }
+
+  .project_ContainerWrapper {
+    .project_sectionHeader {
+      text-align: left;
+      padding-bottom: 70px;
+
+      @media only screen and (max-width: 1440px) {
+        padding-bottom: 56px;
+      }
+      @media only screen and (max-width: 1200px) {
+        padding-bottom: 40px;
+      }
+      @media only screen and (max-width: 991px) {
+        padding-bottom: 40px;
+      }
+    }
+
+    .project_Wrapper {
+      padding: 80px 60px;
+      background-color: rgb(255, 255, 255);
+      display: flex;
+
+      @media only screen and (max-width: 1200px) {
+        padding: 40px;
+      }
+      @media only screen and (max-width: 991px) {
+        padding: 0;
+        background-color: transparent;
+      }
+    }
+
+    .project_ImgWrapper {
+      width: 488px;
+      position: relative;
+
+      @media only screen and (max-width: 1200px) {
+        width: 460px;
+      }
+
+      @media only screen and (max-width: 991px) {
+        width: 350px;
+      }
+    }
+  }
+}
+
+#project_carousel {
+  width: calc(100% - 488px);
+  @media only screen and (max-width: 1200px) {
+    width: calc(100% - 460px);
+  }
+
+  ul {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  p {
+    margin-bottom: 30px;
+    margin-top: 0;
+  }
+}
