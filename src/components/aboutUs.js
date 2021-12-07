@@ -28,7 +28,7 @@ export const AboutUs = () => {
             </p>
           </div>
           <div className="react-reveal">
-            <p class="Text__TextWrapper-sc-1vevv34-0 jpKUCY">
+            <p className="Text__TextWrapper-sc-1vevv34-0 jpKUCY">
               When considering the design of your bedroom, it’s important to
               keep in mind both aesthetics and functionality. If storage is a
               primary concern, it is important to integrate the right cupboards
@@ -36,8 +36,8 @@ export const AboutUs = () => {
             </p>
           </div>
           <div className="react-reveal">
-            <a class="learn__more-btn" href="/interior#1">
-              <span class="btn_text">VISITE SITE</span>
+            <a className="learn__more-btn" href="/interior#1">
+              <span className="btn_text">VISITE SITE</span>
               <BsArrowRight />
             </a>
           </div>

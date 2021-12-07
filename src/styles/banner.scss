@@ -16,11 +16,12 @@
   margin: 0 auto;
   padding: 0 20px;
   align-items: center;
+  box-sizing: border-box;
 
   @media only screen and (max-width: 1600px) {
     padding: 0 81px;
   }
-  
+
   @media only screen and (max-width: 1360px) {
     padding: 0 60px;
   }
@@ -37,7 +38,7 @@
   @media only screen and (max-width: 1600px) {
     width: 560px;
   }
-  
+
   @media only screen and (max-width: 1360px) {
     width: 40%;
   }
@@ -46,7 +47,8 @@
     width: 45%;
   }
 
-  h1, p {
+  h1,
+  p {
     color: rgb(198, 198, 198);
   }
   .react-reveal {
@@ -98,7 +100,7 @@
     margin-bottom: 1rem;
   }
 
-  .Banner_FormWrapper{
+  .Banner_FormWrapper {
     margin-top: 45px;
 
     .Banner_inputField {
@@ -188,7 +190,6 @@
       .btn-text {
         padding-left: 5px;
         padding-right: 5px;
-
       }
 
       .btn-icon {
@@ -207,7 +208,7 @@
   @media only screen and (max-width: 1600px) {
     width: calc(100% - 560px);
   }
-  
+
   @media only screen and (max-width: 1360px) {
     width: 60%;
   }
@@ -272,7 +273,3 @@
     margin-top: 30px;
   }
 }
-
-
-
-

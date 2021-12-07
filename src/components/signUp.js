@@ -7,7 +7,9 @@ export const SignUP = () => {
   return (
     <div>
       <button className="button modal_closeBtn">
-        <span class="btn-icon"><AiOutlineClose /></span>
+        <span className="btn-icon">
+          <AiOutlineClose />
+        </span>
       </button>
       <div className="modal_wrapper">
         <div className="modal_component">

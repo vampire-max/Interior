@@ -9,7 +9,8 @@ import { Service } from './components/service'
 import { AboutUs } from './components/aboutUs'
 import { Project } from './components/project'
 import { Team } from './components/team'
-import { News } from './components/news'
+import { News } from './components/News'
+import { Footer } from './components/footer/index'
 
 function App() {
   // useEffect(() => {
@@ -41,6 +42,7 @@ function App() {
       <Project />
       <Team />
       <News />
+      <Footer />
     </div>
   )
 }

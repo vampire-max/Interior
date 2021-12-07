@@ -3,7 +3,7 @@ import '../styles/team.scss'
 
 export const Social = () => {
   return (
-    <ul class="social_links">
+    <ul className="social_links">
       <li>
         <a
           aria-label="Check out our team member profile"

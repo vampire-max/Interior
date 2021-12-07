@@ -1,0 +1,19 @@
+.Clients_Wrapper {
+  .glide {
+    display: flex;
+    align-items: center;
+
+    @media only screen and (max-width: 991px) {
+      flex-direction: column;
+    }
+
+    .slide_wrapper {
+      width: 100%;
+
+      @media only screen and (max-width: 991px) {
+        width: calc(100% - 450px);
+        padding: 56px 50px;
+      }
+    }
+  }
+}

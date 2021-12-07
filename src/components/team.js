@@ -26,7 +26,7 @@ export const Team = () => {
                         <img src={member1} />
                       </div>
                       <div className="team_textWrapper">
-                        <div class="name_plate">
+                        <div className="name_plate">
                           <h3>Roman Ul Oman</h3>
                           <p>Project Manager</p>
                         </div>
@@ -40,7 +40,7 @@ export const Team = () => {
                         <img src={member2} />
                       </div>
                       <div className="team_textWrapper">
-                        <div class="name_plate">
+                        <div className="name_plate">
                           <h3>Jeny Doe</h3>
                           <p>Lead Designer</p>
                         </div>
@@ -54,7 +54,7 @@ export const Team = () => {
                         <img src={member3} />
                       </div>
                       <div className="team_textWrapper">
-                        <div class="name_plate">
+                        <div className="name_plate">
                           <h3>Naina Cooper</h3>
                           <p>Maketing Manager</p>
                         </div>
