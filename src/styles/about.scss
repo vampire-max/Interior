@@ -83,3 +83,18 @@
     }
   }
 }
+
+.slider-container {
+  outline: 2px dashed black;
+  width: 45rem;
+  margin: auto;
+  overflow: hidden;
+  .slides-wrapper {
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    .slide {
+      border: 1px dashed blue;
+      text-align: center;
+    }
+  }
+}

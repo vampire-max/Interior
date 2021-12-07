@@ -3,11 +3,11 @@ import modal_img from '../img/modal_img.jpg'
 import form_logo from '../img/signUp_logo.png'
 import { AiOutlineClose } from 'react-icons/ai'
 
-export const SignUP = () => {
+export const SignUP = ({ setOpen }) => {
   return (
     <div>
-      <button className="button modal_closeBtn">
-        <span className="btn-icon">
+      <button className="button modal_closeBtn" onClick={() => setOpen(false)}>
+        <span className="close_btn_icon">
           <AiOutlineClose />
         </span>
       </button>
@@ -20,7 +20,7 @@ export const SignUP = () => {
             {/* <button onClick={onClose}>Close</button> */}
             <div className="Box_wrapper">
               <div className="Form_wrapper">
-                <img src={form_logo} />
+                <img src={form_logo} className="pattern_image" />
                 <div className="rc-tabs margin-top">
                   <div className="rc-tabs-nav">LOGIN</div>
                 </div>

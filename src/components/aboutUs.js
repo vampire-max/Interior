@@ -2,8 +2,9 @@ import React from 'react'
 import about from '../img/about.png'
 import '../styles/about.scss'
 import { BsArrowRight } from 'react-icons/bs'
+import { Slider } from './glide'
 
-export const AboutUs = () => {
+export const AboutUs = ({ slides }) => {
   return (
     <div id="AboutUs" className="about_Wrapper">
       <div className="about_container">
@@ -43,6 +44,15 @@ export const AboutUs = () => {
           </div>
         </div>
       </div>
+      <Slider display={3}>
+        {/* <h2>slider5</h2>   */}
+        <h2>slider1</h2>
+        <h2>slider2</h2>
+        <h2>slider3</h2>
+        <h2>slider4</h2>
+        <h2>slider5</h2>
+        {/* <h2>slider1</h2> */}
+      </Slider>
     </div>
   )
 }

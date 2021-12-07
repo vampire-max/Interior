@@ -47,7 +47,7 @@ const Header = ({ setOpen }) => {
             <button
               className="navbar_button button_1"
               onClick={() => {
-                setOpen(true)
+                setOpen(!true)
               }}
             >
               <span className="btn-icon">
