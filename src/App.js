@@ -35,7 +35,7 @@ function App() {
       </div> */}
       <Modal open={open}>
         {/* <button onClick={() => setOpen(false)}>Close</button> */}
-        <SignUP setOpen={setOpen} onclose={onclose} />
+        <SignUP setOpen={setOpen} />
       </Modal>
       <Service />
       <AboutUs />

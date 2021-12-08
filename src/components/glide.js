@@ -3,16 +3,47 @@ import '../styles/about.scss'
 import { useLayoutEffect, useRef, useState } from 'react'
 
 export const Slider = ({ children, display }) => {
+  // export const Slider = ({ children }) => {
   const [slides, setSlides] = useState(
     children?.length
-      ? [children[children.length - 1], ...children, children[0]]
+      ? [
+          ...children.slice(-display),
+          ...children,
+          ...children.slice(0, display),
+        ]
       : [],
   )
+  console.log('slides', slides)
   // const [display, setDisplay] = useState(0)
-  const [index, setIndex] = useState(1)
+  const [index, setIndex] = useState(display)
   const container = useRef()
   const [slideWrapperStyle, setSlideWrapperStyle] = useState({})
   const [slideStyle, setSlideStyle] = useState({})
+
+  // useLayoutEffect(() => {
+  //   const { width: containerWidth } = container.current.getBoundingClientRect()
+  //   setSlideStyle({ width: containerWidth })
+  //   if (index === 0) {
+  //     setSlideWrapperStyle({
+  //       width: containerWidth * slides.length,
+  //       transform: `translateX(-${containerWidth * (slides.length - 1)}px)`,
+  //       transition: 'none',
+  //     })
+  //     setIndex(slides.length - 2)
+  //   } else if (index === slides.length - 1) {
+  //     setSlideWrapperStyle({
+  //       width: containerWidth * slides.length,
+  //       transform: `translateX(0px)`,
+  //       transition: 'none',
+  //     })
+  //     setIndex(1)
+  //   } else {
+  //     setSlideWrapperStyle({
+  //       width: containerWidth * slides.length,
+  //       transform: `translateX(-${containerWidth * index}px)`,
+  //     })
+  //   }
+  // }, [index])
 
   useLayoutEffect(() => {
     const { width: containerWidth } = container.current.getBoundingClientRect()
@@ -26,7 +57,7 @@ export const Slider = ({ children, display }) => {
         }px)`,
         transition: 'none',
       })
-      setIndex(slides.length - 1)
+      setIndex(children.length)
       console.log('1', slideWrapperStyle)
     } else if (index === slides.length - display) {
       console.log('slider.index', slides.index)
@@ -36,7 +67,7 @@ export const Slider = ({ children, display }) => {
         transform: `translateX(0px)`,
         transition: 'none',
       })
-      setIndex(1)
+      setIndex(display)
       console.log('2', slideWrapperStyle)
     } else {
       setSlideWrapperStyle({
@@ -46,6 +77,7 @@ export const Slider = ({ children, display }) => {
       console.log('3', slideWrapperStyle)
     }
   }, [index])
+
   // useLayoutEffect(() => {
   //   const { width: containerWidth } = container.current.getBoundingClientRect()
   //   console.log(containerWidth)
@@ -55,6 +87,10 @@ export const Slider = ({ children, display }) => {
   //     transform: `translateX(-${containerWidth * index}px)`,
   //   })
   // }, [index])
+  useEffect(() => {
+    console.log('index', index)
+    console.log('slide.length', slides.length)
+  }, [index])
 
   return (
     <div className="slider-container" ref={container}>
@@ -67,8 +103,13 @@ export const Slider = ({ children, display }) => {
       </div>
       <button
         // disabled={index === 0}
-        onClick={() =>
-          setIndex(index === 0 ? slides?.length - 1 || 0 : index - 1)
+        onClick={
+          () => {
+            setIndex(index === 0 ? slides.length - 1 || 0 : index - 1)
+            // console.log('previndex', index)
+          }
+
+          // setIndex(index === 0 ? slides?.length - 1 || 0 : index - 1)
         }
       >
         Prev
@@ -76,8 +117,9 @@ export const Slider = ({ children, display }) => {
       <button
         // disabled={index + 1 === slides?.length}
         onClick={() => {
-          console.log(index)
-          setIndex(index + 1 === slides?.length ? 0 : index + 1)
+          // console.log('length', slides.length)
+          setIndex(index + 1 === slides?.length ? 1 : index + 1)
+          // console.log('next index', index)
         }}
       >
         Next
