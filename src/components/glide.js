@@ -14,7 +14,6 @@ export const Slider = ({ children, display }) => {
       : [],
   )
   console.log('slides', slides)
-  // const [display, setDisplay] = useState(0)
   const [index, setIndex] = useState(display)
   const container = useRef()
   const [slideWrapperStyle, setSlideWrapperStyle] = useState({})

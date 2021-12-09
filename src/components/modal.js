@@ -2,7 +2,7 @@ import React from 'react'
 import { createPortal } from 'react-dom'
 import '../styles/modal.scss'
 
-export const Modal = ({ children, open, onClose, onBackdropClick }) => {
+export const Modal = ({ children, open, onBackdropClick }) => {
   if (!open) return null
 
   return createPortal(

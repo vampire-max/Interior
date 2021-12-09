@@ -18,7 +18,7 @@ const Header = ({ setOpen }) => {
       //   setIsSticky(false)
       // }
       setIsSticky(window.scrollY >= 30)
-      console.log(isSticky)
+      // console.log(isSticky)
     }
     window.addEventListener('scroll', handleScroll)
 
