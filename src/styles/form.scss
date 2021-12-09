@@ -1,0 +1,88 @@
+.reusecore__button {
+  color: rgb(53, 47, 217);
+  background-color: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  min-width: 48px;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: capitalize;
+  padding: 8px 15px;
+  border: 0px;
+  transition: all 0.3s ease 0s;
+}
+
+.google-login__btn {
+  width: 100%;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 45px;
+  box-shadow: rgb(0 0 0 / 10%) 0px 4px 15px;
+
+  .btn-icon {
+    position: relative;
+    left: -22px;
+
+    &span {
+      display: flex;
+    }
+  }
+
+  span.btn-text {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+.reusecore__input {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.is-material {
+  input {
+    border-radius: 0px;
+    border-top: 0px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 16px;
+    padding: 11px;
+    display: block;
+    width: 100%;
+    color: rgb(72, 72, 72);
+    box-shadow: none;
+    box-sizing: border-box;
+    border: 1px solid rgb(235, 235, 235);
+    transition: border-color 0.2s ease 0s;
+
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid rgb(2, 132, 137);
+    }
+  }
+
+  label {
+    position: absolute;
+    left: 0px;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    top: 15px;
+    background-color: white;
+    transition: transform 0.15s linear;
+  }
+
+  input:focus + label {
+    color: rgb(2, 132, 137);
+    transform: translate(-0.5rem, -175%) scale(0.8);
+    background-color: white;
+  }
+}

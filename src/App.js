@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Banner from './components/banner'
 import Header from './components/header'
 import { Modal } from './components/modal'
-import { SignUP } from './components/signUp'
+import { Form } from './components/Form'
 import { Service } from './components/service'
 import { AboutUs } from './components/aboutUs'
 import { Project } from './components/project'
@@ -35,7 +35,7 @@ function App() {
       </div> */}
       <Modal open={open}>
         {/* <button onClick={() => setOpen(false)}>Close</button> */}
-        <SignUP setOpen={setOpen} />
+        <Form setOpen={setOpen} />
       </Modal>
       <Service />
       <AboutUs />

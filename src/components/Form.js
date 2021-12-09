@@ -1,12 +1,12 @@
 import React from 'react'
 import modal_img from '../img/modal_img.jpg'
-import form_logo from '../img/signUp_logo.png'
+import form_logo from '../img/form_logo.png'
 import { AiOutlineClose } from 'react-icons/ai'
-import googlelogo from '../img/google_logo.jpg'
+import { LoginForm } from './loginForm'
+import '../styles/modal.scss'
+import { SignUpForm } from './signUpForm'
 
-export const SignUP = ({ setOpen, open }) => {
-  // const handleClose = setOpen(false)
-
+export const Form = ({ setOpen }) => {
   return (
     <div>
       <button
@@ -82,66 +82,8 @@ export const SignUP = ({ setOpen, open }) => {
                           Welcome to Mate Family. Please login with your
                           personal account information letter.
                         </p>
-                        <button
-                          type="button"
-                          className="buttonstyle__ButtonStyle-sc-13ebl9m-0 kKHiPr reusecore__button google-login__btn"
-                          color="#343D48"
-                        >
-                          <span className="btn-icon">
-                            <img
-                              src={googlelogo}
-                              alt="Google Icon"
-                              className="Image__ImageWrapper-sc-1lwf601-0 liulOm"
-                            />
-                          </span>
-                          <span className="btn-text">Sign up with Google</span>
-                        </button>
-                        <div className="inputstyle__InputField-f1ymr3-0 bCnJRk reusecore__input is-material ">
-                          <div className="field-wrapper">
-                            <input
-                              id="full_name"
-                              name="full_name"
-                              type="text"
-                              value=""
-                            />
-                          </div>
-                          <span className="highlight"></span>
-                          <label for="full_name">Full Name</label>
-                        </div>
-                        <div className="inputstyle__InputField-f1ymr3-0 bCnJRk reusecore__input is-material ">
-                          <div className="field-wrapper">
-                            <input
-                              id="email_address"
-                              name="email_address"
-                              type="email"
-                              value=""
-                            />
-                          </div>
-                          <span className="highlight"></span>
-                          <label for="email_address">Email Address</label>
-                        </div>
-                        <div className="inputstyle__InputField-f1ymr3-0 bCnJRk reusecore__input is-material ">
-                          <div className="field-wrapper">
-                            <input
-                              id="password"
-                              name="password"
-                              type="text"
-                              value=""
-                            />
-                          </div>
-                          <span className="highlight"></span>
-                          <label for="password">Password</label>
-                        </div>
-                        <div>
-                          <button
-                            type="button"
-                            className="buttonstyle__ButtonStyle-sc-13ebl9m-0 jvTmZB reusecore__button default"
-                            font-size="14px"
-                            font-weight="500"
-                          >
-                            <span className="btn-text">REGISTER</span>
-                          </button>
-                        </div>
+                        <LoginForm />
+                        <SignUpForm />
                       </div>
                     </div>
                   </div>
