@@ -5,17 +5,27 @@ import '../styles/glide.scss'
 import member1 from '../img/member1.jpg'
 import member2 from '../img/member2.jpg'
 import member3 from '../img/member3.jpg'
-import { Social } from './social'
 import { SlideMulti } from './slideMulti'
+import { Member } from './member'
 
 export const Team = () => {
-  // const team = [
-  //   {
-  //     img: member1,
-  //     name: 'Roman Ul Oman ',
-  //     job: 'Project Manager',
-  //   },
-  // ]
+  const member = [
+    {
+      img: member1,
+      name: 'Roman Ul Oman ',
+      job: 'Project Manager',
+    },
+    {
+      img: member2,
+      name: 'Jeny Doe ',
+      job: 'Lead Designer',
+    },
+    {
+      img: member3,
+      name: 'Naina Cooper ',
+      job: 'Project Manager',
+    },
+  ]
   return (
     <div id="team" className="team_SectionWrapper">
       <div className="team_section Container-Wrapper">
@@ -29,42 +39,9 @@ export const Team = () => {
               <div className="glide_track">
                 <ul className="glide_slides">
                   <SlideMulti display={3}>
-                    <div className="team_card">
-                      <div className="team_ImgWrapper">
-                        <img src={member1} />
-                      </div>
-                      <div className="team_textWrapper">
-                        <div className="name_plate">
-                          <h3>Roman Ul Oman</h3>
-                          <p>Project Manager</p>
-                        </div>
-                        <Social />
-                      </div>
-                    </div>
-                    <div className="team_card">
-                      <div className="team_ImgWrapper">
-                        <img src={member2} />
-                      </div>
-                      <div className="team_textWrapper">
-                        <div className="name_plate">
-                          <h3>Jeny Doe</h3>
-                          <p>Lead Designer</p>
-                        </div>
-                        <Social />
-                      </div>
-                    </div>
-                    <div className="team_card">
-                      <div className="team_ImgWrapper">
-                        <img src={member3} />
-                      </div>
-                      <div className="team_textWrapper">
-                        <div className="name_plate">
-                          <h3>Naina Cooper</h3>
-                          <p>Maketing Manager</p>
-                        </div>
-                        <Social />
-                      </div>
-                    </div>
+                    {member.map((item, index) => (
+                      <Member member={item} key={index} />
+                    ))}
                   </SlideMulti>
                 </ul>
               </div>

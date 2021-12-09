@@ -1,3 +1,4 @@
+import userEvent from '@testing-library/user-event'
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import '../styles/about.scss'
 
@@ -17,7 +18,10 @@ export const SlideMulti = ({ children, display }) => {
   const [slideStyle, setSlideStyle] = useState({})
 
   const container = useRef()
+
+  const firstRender = useRef(true)
   useLayoutEffect(() => {
+    console.log('firstrender', firstRender)
     const containerWidth =
       container.current.getBoundingClientRect().width / display
     setSlideStyle({ width: containerWidth })
@@ -41,7 +45,9 @@ export const SlideMulti = ({ children, display }) => {
       setSlideWrapperStyle({
         width: containerWidth * slides.length,
         transform: `translateX(-${containerWidth * index}px)`,
+        ...(firstRender.current && { transition: 'none' }),
       })
+      firstRender.current = false
     }
   }, [index])
   return (
