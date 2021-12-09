@@ -53,29 +53,31 @@ export const SlideMulti = ({ children, display }) => {
           </div>
         ))}
       </div>
-      <button
-        // disabled={index === 0}
-        onClick={
-          () => {
-            setIndex(index === 0 ? slides.length - 1 || 0 : index - 1)
-            // console.log('previndex', index)
-          }
+      <div className="slider-control">
+        <button
+          // disabled={index === 0}
+          onClick={
+            () => {
+              setIndex(index === 0 ? slides.length - 1 || 0 : index - 1)
+              // console.log('previndex', index)
+            }
 
-          // setIndex(index === 0 ? slides?.length - 1 || 0 : index - 1)
-        }
-      >
-        Prev
-      </button>
-      <button
-        // disabled={index + 1 === slides?.length}
-        onClick={() => {
-          // console.log('length', slides.length)
-          setIndex(index + 1 === slides?.length ? 0 : index + 1)
-          // console.log('next index', index)
-        }}
-      >
-        Next
-      </button>
+            // setIndex(index === 0 ? slides?.length - 1 || 0 : index - 1)
+          }
+        >
+          Prev
+        </button>
+        <button
+          // disabled={index + 1 === slides?.length}
+          onClick={() => {
+            // console.log('length', slides.length)
+            setIndex(index + 1 === slides?.length ? 0 : index + 1)
+            // console.log('next index', index)
+          }}
+        >
+          Next
+        </button>
+      </div>
     </div>
   )
 }

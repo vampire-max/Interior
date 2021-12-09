@@ -20,8 +20,10 @@ export const LoginForm = () => {
         </span>
         <span className="btn-text">Sign In with Google</span>
       </button>
-      <Input label={'Email Address'} required />
-      <Input label={'Password'} required />
+      <form required>
+        <Input label={'Email Address'} required />
+        <Input label={'Password'} required />
+      </form>
       <div>
         <button
           type="button"

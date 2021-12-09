@@ -6,8 +6,16 @@ import member1 from '../img/member1.jpg'
 import member2 from '../img/member2.jpg'
 import member3 from '../img/member3.jpg'
 import { Social } from './social'
+import { SlideMulti } from './slideMulti'
 
 export const Team = () => {
+  // const team = [
+  //   {
+  //     img: member1,
+  //     name: 'Roman Ul Oman ',
+  //     job: 'Project Manager',
+  //   },
+  // ]
   return (
     <div id="team" className="team_SectionWrapper">
       <div className="team_section Container-Wrapper">
@@ -20,7 +28,7 @@ export const Team = () => {
             <div className="CarouselWrapper">
               <div className="glide_track">
                 <ul className="glide_slides">
-                  <li className="glider_sliderWrapper glide_slide">
+                  <SlideMulti display={3}>
                     <div className="team_card">
                       <div className="team_ImgWrapper">
                         <img src={member1} />
@@ -33,8 +41,6 @@ export const Team = () => {
                         <Social />
                       </div>
                     </div>
-                  </li>
-                  <li className="glider_sliderWrapper glide_slide">
                     <div className="team_card">
                       <div className="team_ImgWrapper">
                         <img src={member2} />
@@ -47,8 +53,6 @@ export const Team = () => {
                         <Social />
                       </div>
                     </div>
-                  </li>
-                  <li className="glider_sliderWrapper glide_slide">
                     <div className="team_card">
                       <div className="team_ImgWrapper">
                         <img src={member3} />
@@ -61,7 +65,7 @@ export const Team = () => {
                         <Social />
                       </div>
                     </div>
-                  </li>
+                  </SlideMulti>
                 </ul>
               </div>
             </div>

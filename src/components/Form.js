@@ -5,8 +5,11 @@ import { AiOutlineClose } from 'react-icons/ai'
 import { LoginForm } from './loginForm'
 import '../styles/modal.scss'
 import { SignUpForm } from './signUpForm'
+import { useState } from 'react/cjs/react.development'
 
 export const Form = ({ setOpen }) => {
+  const [form, setForm] = useState('login')
+
   return (
     <div>
       <button
@@ -32,7 +35,11 @@ export const Form = ({ setOpen }) => {
                   <div className="rc-tabs-nav">
                     <div className="rc-tabs-nav-wrap">
                       <div className="rc-tabs-nav-list">
-                        <div className="rc-tabs-tab rc-tabs-tab-active">
+                        <div
+                          className={`rc-tabs-tab ${
+                            form === 'login' ? 'rc-tabs-tab-active' : ''
+                          } `}
+                        >
                           <div
                             role="tab"
                             aria-selected="true"
@@ -40,11 +47,16 @@ export const Form = ({ setOpen }) => {
                             tabindex="0"
                             id="rc-tabs-25-tab-loginForm"
                             aria-controls="rc-tabs-25-panel-loginForm"
+                            onClick={() => setForm('login')}
                           >
                             LOGIN
                           </div>
                         </div>
-                        <div className="rc-tabs-tab">
+                        <div
+                          className={`rc-tabs-tab ${
+                            form === 'signup' ? 'rc-tabs-tab-active' : ''
+                          } `}
+                        >
                           <div
                             role="tab"
                             aria-selected="false"
@@ -52,6 +64,7 @@ export const Form = ({ setOpen }) => {
                             tabindex="0"
                             id="rc-tabs-25-tab-registerForm"
                             aria-controls="rc-tabs-25-panel-registerForm"
+                            onClick={() => setForm('signup')}
                           >
                             REGISTER
                           </div>
@@ -82,8 +95,7 @@ export const Form = ({ setOpen }) => {
                           Welcome to Mate Family. Please login with your
                           personal account information letter.
                         </p>
-                        <LoginForm />
-                        <SignUpForm />
+                        {form === 'login' ? <LoginForm /> : <SignUpForm />}
                       </div>
                     </div>
                   </div>

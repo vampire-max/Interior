@@ -19,3 +19,24 @@
     margin-right: 15px;
   }
 }
+
+.slider-container {
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  .slides-wrapper {
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    .slide {
+      text-align: center;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  }
+}
+
+.slider-control {
+  position: absolute;
+  top: -90px;
+  right: 30px;
+}
