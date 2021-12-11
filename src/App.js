@@ -11,6 +11,7 @@ import { Project } from './components/project'
 import { Team } from './components/team'
 import { News } from './components/News'
 import { Footer } from './components/footer/index'
+import { Gallery } from './components/gallery'
 
 function App() {
   // useEffect(() => {
@@ -42,6 +43,7 @@ function App() {
       <Project />
       <Team />
       <News />
+      <Gallery />
       <Footer />
     </div>
   )

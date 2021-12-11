@@ -200,23 +200,6 @@
 }
 
 .Banner_CarouselArea {
-  width: calc(100% - 595px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @media only screen and (max-width: 1600px) {
-    width: calc(100% - 560px);
-  }
-
-  @media only screen and (max-width: 1360px) {
-    width: 60%;
-  }
-
-  @media only screen and (max-width: 1200px) {
-    width: 55%;
-  }
-
   .glide_slider {
     position: relative;
     list-style: none;
@@ -271,5 +254,26 @@
 
   .glide_controlButton_wrapper {
     margin-top: 30px;
+  }
+}
+
+#interior_carousel {
+  .slider-container {
+    width: calc(100% - 595px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: 1600px) {
+      width: calc(100% - 560px);
+    }
+
+    @media only screen and (max-width: 1360px) {
+      width: 60%;
+    }
+
+    @media only screen and (max-width: 1200px) {
+      width: 55%;
+    }
   }
 }

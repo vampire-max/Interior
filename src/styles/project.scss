@@ -64,19 +64,16 @@
     width: calc(100% - 460px);
   }
 
-  ul {
+  div {
     margin-left: 0;
     margin-right: 0;
     padding-left: 0;
     padding-right: 0;
-
-    li {
-      list-style: none;
-    }
   }
 
   p {
     margin-bottom: 30px;
     margin-top: 0;
+    text-align: left;
   }
 }

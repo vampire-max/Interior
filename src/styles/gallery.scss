@@ -1,0 +1,41 @@
+.gallery_wrapper {
+  padding: 0px 0px 160px;
+  background: linear-gradient(rgb(255, 255, 255), rgb(251, 250, 254));
+  display: flex;
+  overflow: inherit;
+
+  @media only screen and (max-width: 1440px) {
+    padding: 0 0 150px;
+  }
+}
+
+.galleryCard {
+  a {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    box-shadow: rgb(25 25 25 / 19%) 0px 30px 70px 10px;
+  }
+
+  .read_more__btn {
+    border: 0;
+    padding: 0px;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    bottom: 35px;
+    left: 35px;
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: rgb(198, 198, 198);
+    z-index: 2;
+  }
+}
+
+#gallery {
+  .slide {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

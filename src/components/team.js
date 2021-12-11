@@ -26,6 +26,18 @@ export const Team = () => {
       job: 'Project Manager',
     },
   ]
+
+  // const responsiveWidth = [
+  //   { width: 1300, display: 3 },
+  //   { width: 768, display: 2 },
+  //   { width: 480, display: 1 },
+  // ]
+  const responsive = {
+    1300: 3,
+    768: 2,
+    480: 1,
+  }
+
   return (
     <div id="team" className="team_SectionWrapper">
       <div className="team_section Container-Wrapper">
@@ -38,7 +50,7 @@ export const Team = () => {
             <div className="CarouselWrapper">
               <div className="glide_track">
                 <ul className="glide_slides">
-                  <SlideMulti display={3}>
+                  <SlideMulti responsive={responsive}>
                     {member.map((item, index) => (
                       <Member member={item} key={index} />
                     ))}

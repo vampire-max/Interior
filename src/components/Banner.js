@@ -2,6 +2,8 @@ import React from 'react'
 import '../styles/banner.scss'
 import slider1 from '../img/slider1.png'
 import slider2 from '../img/slider2.png'
+import slider3 from '../img/slider3.png'
+import { SlideMulti } from './slideMulti'
 
 const Banner = () => {
   return (
@@ -66,18 +68,25 @@ const Banner = () => {
         <div className="Banner_CarouselArea">
           <div className="carousel-swipeable" id="interior_carousel">
             <div className="glide_track">
-              <ul className="glide_slider">
-                <li className="glide_slide">
-                  <a className="item_wrapper">
-                    <img src={slider1} />
-                  </a>
-                </li>
-                <li className="glide_slide">
-                  <a className="item_wrapper">
-                    <img src={slider2} />
-                  </a>
-                </li>
-              </ul>
+              <div className="glide_slider">
+                <SlideMulti display={3}>
+                  <div className="glide_slide">
+                    <a className="item_wrapper">
+                      <img src={slider1} />
+                    </a>
+                  </div>
+                  <div className="glide_slide">
+                    <a className="item_wrapper">
+                      <img src={slider2} />
+                    </a>
+                  </div>
+                  <div className="glide_slide">
+                    <a className="item_wrapper">
+                      <img src={slider3} />
+                    </a>
+                  </div>
+                </SlideMulti>
+              </div>
             </div>
             <div className="glide_controlButton_wrapper">
               <div className="glide_prev"></div>

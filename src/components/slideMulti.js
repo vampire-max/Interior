@@ -1,66 +1,103 @@
-import userEvent from '@testing-library/user-event'
-import React, { useLayoutEffect, useRef, useState } from 'react'
+import React from 'react'
 import '../styles/about.scss'
+import { useLayoutEffect, useRef, useState, useEffect } from 'react'
 
-export const SlideMulti = ({ children, display }) => {
-  const [slides, setSlides] = useState(
-    children?.length
-      ? [
-          ...[...children].splice(-display),
-          ...[...children],
-          ...[...children].splice(0, display),
-        ]
-      : [],
-  )
-
-  const [index, setIndex] = useState(display)
+export const SlideMulti = ({ children, responsive }) => {
+  const [display, setDisplay] = useState(null)
+  const [slides, setSlides] = useState(null)
+  const [index, setIndex] = useState(null)
   const [slideWrapperStyle, setSlideWrapperStyle] = useState({})
   const [slideStyle, setSlideStyle] = useState({})
 
   const container = useRef()
 
   const firstRender = useRef(true)
+
+  useEffect(() => {
+    if (display) {
+      setSlides(
+        children?.length
+          ? [
+              ...[...children].splice(-display),
+              ...[...children],
+              ...[...children].splice(0, display),
+            ]
+          : [],
+      )
+      setIndex(display)
+      console.log('disp', display)
+    }
+  }, [display])
+
+  const handleResponsive = () => {
+    const resizeWidth = window.innerWidth
+    if (responsive) {
+      let displayNum = 1
+      if (resizeWidth >= 1300) {
+        displayNum = responsive['1300']
+      } else if (resizeWidth <= 768) {
+        displayNum = responsive['480']
+      } else {
+        displayNum = responsive['768']
+      }
+      setDisplay(displayNum)
+    }
+  }
+
   useLayoutEffect(() => {
-    console.log('firstrender', firstRender)
     const containerWidth =
       container.current.getBoundingClientRect().width / display
+
     setSlideStyle({ width: containerWidth })
-    if (index < display) {
-      setSlideWrapperStyle({
-        width: containerWidth * (children.length + display * 2),
-        transform: `translateX(-${
-          containerWidth * (children.length + display)
-        }px)`,
-        transition: 'none',
-      })
-      setIndex(children.length + display - 1)
-    } else if (index > children.length + display) {
-      setSlideWrapperStyle({
-        width: containerWidth * slides.length,
-        transform: `translateX(-${containerWidth * display}px)`,
-        transition: 'none',
-      })
-      setIndex(display + 1)
-    } else {
-      setSlideWrapperStyle({
-        width: containerWidth * slides.length,
-        transform: `translateX(-${containerWidth * index}px)`,
-        ...(firstRender.current && { transition: 'none' }),
-      })
-      firstRender.current = false
+    if (index !== null && display !== null) {
+      if (index < display) {
+        setSlideWrapperStyle({
+          width: containerWidth * (children.length + display * 2),
+          transform: `translateX(-${
+            containerWidth * (children.length + display)
+          }px)`,
+          transition: 'none',
+        })
+        setIndex(children.length + display - 1)
+      } else if (index > children.length + display) {
+        setSlideWrapperStyle({
+          width: containerWidth * slides.length,
+          transform: `translateX(-${containerWidth * display}px)`,
+          transition: 'none',
+        })
+        setIndex(display + 1)
+      } else {
+        setSlideWrapperStyle({
+          width: containerWidth * slides.length,
+          transform: `translateX(-${containerWidth * index}px)`,
+          ...(firstRender.current && { transition: 'none' }),
+        })
+        firstRender.current = false
+      }
     }
-  }, [index])
+  }, [index, display])
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResponsive())
+
+    return () => {
+      window.removeEventListener('resize', handleResponsive())
+    }
+  }, [])
+
   return (
     <div className="slider-container" ref={container}>
       <div className="slides-wrapper" style={slideWrapperStyle}>
-        {slides.map((slide, i) => (
-          <div key={i} className="slide" style={slideStyle}>
-            {slide}
-          </div>
-        ))}
+        {slides &&
+          slides.map((slide, i) => (
+            <div key={i} className="slide" style={slideStyle}>
+              {slide}
+            </div>
+          ))}
       </div>
       <div className="slider-control">
         <button
+          className="control-prev"
           // disabled={index === 0}
           onClick={
             () => {
@@ -74,6 +111,7 @@ export const SlideMulti = ({ children, display }) => {
           Prev
         </button>
         <button
+          className="control-next"
           // disabled={index + 1 === slides?.length}
           onClick={() => {
             // console.log('length', slides.length)
