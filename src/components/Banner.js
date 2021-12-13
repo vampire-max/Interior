@@ -6,6 +6,12 @@ import slider3 from '../img/slider3.png'
 import { SlideMulti } from './slideMulti'
 
 const Banner = () => {
+  const responsive = {
+    1300: 3,
+    768: 2,
+    480: 1,
+  }
+
   return (
     <div className="Banner_banner-wrapper">
       <div className="Banner_container">
@@ -65,32 +71,26 @@ const Banner = () => {
             </form>
           </div>
         </div>
-        <div className="Banner_CarouselArea">
-          <div className="carousel-swipeable" id="interior_carousel">
-            <div className="glide_track">
-              <div className="glide_slider">
-                <SlideMulti display={3}>
-                  <div className="glide_slide">
-                    <a className="item_wrapper">
-                      <img src={slider1} />
-                    </a>
-                  </div>
-                  <div className="glide_slide">
-                    <a className="item_wrapper">
-                      <img src={slider2} />
-                    </a>
-                  </div>
-                  <div className="glide_slide">
-                    <a className="item_wrapper">
-                      <img src={slider3} />
-                    </a>
-                  </div>
-                </SlideMulti>
-              </div>
-            </div>
-            <div className="glide_controlButton_wrapper">
-              <div className="glide_prev"></div>
-              <div className="glide_next"></div>
+        <div className="carousel-swipeable" id="interior_carousel">
+          <div className="glide_track">
+            <div className="glide_slider">
+              <SlideMulti responsive={responsive}>
+                <div className="glide_slide">
+                  <a className="item_wrapper">
+                    <img src={slider1} />
+                  </a>
+                </div>
+                <div className="glide_slide">
+                  <a className="item_wrapper">
+                    <img src={slider2} />
+                  </a>
+                </div>
+                <div className="glide_slide">
+                  <a className="item_wrapper">
+                    <img src={slider3} />
+                  </a>
+                </div>
+              </SlideMulti>
             </div>
           </div>
         </div>

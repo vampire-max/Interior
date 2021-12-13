@@ -87,15 +87,16 @@
 
       @media only screen and (max-width: 1440px) {
         top: -8vw;
+        flex-wrap: nowrap;
       }
 
       @media only screen and (max-width: 1360px) {
         top: -12vw;
       }
-
       @media only screen and (min-width: 992px) and (max-width: 1200px) {
         margin: 0px -15px;
         top: -14vw;
+        flex-wrap: wrap;
       }
     }
 

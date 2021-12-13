@@ -3,7 +3,13 @@ import '../styles/project.scss'
 import project from '../img/project.png'
 import { SlideMulti } from './slideMulti'
 
-export const Project = ({ slides }) => {
+export const Project = () => {
+  const responsive = {
+    1300: 1,
+    768: 1,
+    480: 1,
+  }
+
   return (
     <div id="project" className="project_sectionWrapper">
       <div className="project_ContainerWrapper Container-Wrapper">
@@ -15,7 +21,7 @@ export const Project = ({ slides }) => {
         </div>
         <div className="project_Wrapper">
           <div className="project_glide" id="project_carousel">
-            <SlideMulti display={1}>
+            <SlideMulti responsive={responsive}>
               <div>
                 <p className="Text_Wrapper">
                   Create a mind map to brainstorm your project to inspire new

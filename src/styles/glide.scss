@@ -24,6 +24,7 @@
   width: 100%;
   margin: auto;
   overflow: hidden;
+
   .slides-wrapper {
     transition: transform 0.3s ease-in-out;
     display: flex;
@@ -38,7 +39,77 @@
 }
 
 .slider-control {
-  position: absolute;
-  top: -90px;
-  right: 30px;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  cursor: pointer;
+
+  & > div {
+    padding: 0px;
+    border: 0px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: transparent;
+  }
+
+  .control-prev {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: rgb(198, 198, 198);
+    transition: width 0.3s ease 0s;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 14px;
+      height: 2px;
+      border-radius: 4px;
+      background-color: rgb(198, 198, 198);
+      position: absolute;
+      z-index: 1;
+      transition: all 0.3s ease 0s;
+    }
+  }
+
+  .control-next {
+    position: relative;
+    width: 45px;
+    background-color: rgb(253, 239, 0);
+    margin-left: 15px !important;
+
+    &::before {
+      background-color: rgb(253, 239, 0);
+      transform: rotate(42deg);
+      content: '';
+      display: block;
+      width: 14px;
+      height: 2px;
+      border-radius: 4px;
+      position: absolute;
+      z-index: 1;
+      transition: all 0.3s ease 0s;
+      transform-origin: right top;
+      right: 0;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 14px;
+      height: 2px;
+      border-radius: 4px;
+      position: absolute;
+      z-index: 1;
+      transition: all 0.3s ease 0s;
+      background-color: rgb(253, 239, 0);
+      transform: rotate(-42deg);
+      transform-origin: 14px 2px;
+      right: 0;
+    }
+  }
 }

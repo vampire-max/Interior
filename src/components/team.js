@@ -27,11 +27,6 @@ export const Team = () => {
     },
   ]
 
-  // const responsiveWidth = [
-  //   { width: 1300, display: 3 },
-  //   { width: 768, display: 2 },
-  //   { width: 480, display: 1 },
-  // ]
   const responsive = {
     1300: 3,
     768: 2,
@@ -47,7 +42,7 @@ export const Team = () => {
             <h2>Meet Our Perfectionist</h2>
           </div>
           <div className="react-reveal">
-            <div className="CarouselWrapper">
+            <div className="CarouselWrapper" id="team">
               <div className="glide_track">
                 <ul className="glide_slides">
                   <SlideMulti responsive={responsive}>

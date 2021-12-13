@@ -17,7 +17,7 @@ export const Footer = () => {
         </svg>
       </div>
       <div className="footer_wrapper">
-        <div className="container_wrapper">
+        <div className="Container-Wrapper">
           <div className="box_wrapper">
             <div className="box_wrapper_left">
               <a href="#" className="logo">

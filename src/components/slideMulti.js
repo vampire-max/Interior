@@ -1,6 +1,6 @@
 import React from 'react'
-import '../styles/about.scss'
 import { useLayoutEffect, useRef, useState, useEffect } from 'react'
+import '../styles/glide.scss'
 
 export const SlideMulti = ({ children, responsive }) => {
   const [display, setDisplay] = useState(null)
@@ -96,7 +96,7 @@ export const SlideMulti = ({ children, responsive }) => {
           ))}
       </div>
       <div className="slider-control">
-        <button
+        <div
           className="control-prev"
           // disabled={index === 0}
           onClick={
@@ -107,10 +107,8 @@ export const SlideMulti = ({ children, responsive }) => {
 
             // setIndex(index === 0 ? slides?.length - 1 || 0 : index - 1)
           }
-        >
-          Prev
-        </button>
-        <button
+        ></div>
+        <div
           className="control-next"
           // disabled={index + 1 === slides?.length}
           onClick={() => {
@@ -118,9 +116,7 @@ export const SlideMulti = ({ children, responsive }) => {
             setIndex(index + 1 === slides?.length ? 0 : index + 1)
             // console.log('next index', index)
           }}
-        >
-          Next
-        </button>
+        ></div>
       </div>
     </div>
   )

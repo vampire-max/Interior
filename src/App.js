@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header setOpen={setOpen} />
+      {/* <Header setOpen={setOpen} /> */}
       <Banner />
       {/* <div style={{ height: '100vh' }}>
         <button style={{ cursor: 'pointer' }} onClick={() => setOpen(true)}>

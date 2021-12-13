@@ -76,4 +76,15 @@
     margin-top: 0;
     text-align: left;
   }
+
+  .slider-control {
+    .control-next {
+      background-color: rgb(53, 47, 217);
+
+      &::after,
+      &::before {
+        background-color: rgb(53, 47, 217);
+      }
+    }
+  }
 }

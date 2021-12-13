@@ -34,6 +34,29 @@
 }
 
 #gallery {
+  .slider-container {
+    position: relative;
+
+    &:hover {
+      .slider-control {
+        display: flex;
+      }
+    }
+    .slider-control {
+      display: none;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      // display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      .control-next {
+        height: 2px;
+      }
+    }
+  }
+
   .slide {
     margin-left: 0;
     margin-right: 0;
